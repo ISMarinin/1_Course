@@ -1,0 +1,95 @@
+0, ,<,less
+
+less,7,6,mv
+less,6,5,mv
+less,5,4,mv
+less,4,3,mv
+less,3,2,mv
+less,2,1,mv
+less,1,0,mv
+less,0,7,mv
+
+mv,7,<,less
+mv,6,<,mv
+mv,5,<,mv
+mv,4,<,mv
+mv,3,<,mv
+mv,2,<,mv
+mv,1,<,mv
+mv,0,<,mv
+mv, ,*,inv
+
+
+inv,*,>,inv
+
+inv,6,>,go
+inv,5,>,go
+inv,4,>,go
+inv,3,>,go
+inv,2,>,go
+inv,1,>,go
+inv,0,>,go
+
+go,7,>,go
+go,6,>,go
+go,5,>,go
+go,4,>,go
+go,3,>,go
+go,2,>,go
+go,1,>,go
+go,0,>,go
+go, ,*,last
+go,*,=,cond
+
+last,7,>,last
+last,*,=,cond
+last, ,=,more
+
+cond,*,<,more
+
+more, ,=,step
+more,7,<,more
+more,6,<,more
+more,5,<,more
+more,4,<,more
+more,3,<,more
+more,2,<,more
+more,1,<,more
+more,0,<,more
+more,*, ,step
+
+step, ,>,step
+step,7,>,hz
+step,6,>,hz
+step,5,>,hz
+step,4,>,hz
+step,3,>,hz
+step,2,>,hz
+step,1,>,hz
+step,0,7,back
+
+hz,7,>,hz
+hz,6,>,hz
+hz,5,>,hz
+hz,4,>,hz
+hz,3,>,hz
+hz,2,>,hz
+hz,1,>,hz
+hz,0,>,hz
+hz,*, ,end
+
+back,7,>,back
+back,6,>,back
+back,5,>,back
+back,4,>,back
+back,3,>,back
+back,2,>,back
+back,1,>,back
+back,0,>,back
+back,*, ,dest
+
+dest, ,<,dest
+dest,7, ,end
+
+
+end, ,#,end
